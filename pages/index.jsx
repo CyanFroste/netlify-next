@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Notify</title>
         <meta name="description" content="Just a Note taking app" />
@@ -12,9 +12,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Link href="/notes">
-          <a>Notes</a>
-        </Link>
+        <Image
+          src="/assets/banner.jpg"
+          alt="notify's landing page banner"
+          layout="fill"
+          objectFit="cover"
+        />
       </main>
     </div>
   );
