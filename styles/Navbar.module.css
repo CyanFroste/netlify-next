@@ -1,5 +1,5 @@
 .navbar {
-  background-color: coral;
+  background-color: #424242;
   position: sticky;
   top: 0;
 }
@@ -33,13 +33,14 @@
 .link {
   color: white;
   padding: 0.5em;
+  font-weight: bold;
 }
 
 .link:not(:last-of-type) {
   margin-right: 0.5em;
 }
 
-.loginBtn {
+.btn {
   font-size: 1.6rem;
   font-weight: bold;
   border-radius: 4px;

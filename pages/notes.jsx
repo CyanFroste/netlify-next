@@ -51,7 +51,7 @@ export default function Notes() {
         </div>
         <div className={styles.sectionTitle}>
           Notes
-          <span>({notes.length})</span>
+          <span>( {notes.length} )</span>
         </div>
         <div className={styles.notesContainer}>
           {notes.length ? (
