@@ -1,0 +1,20 @@
+.note {
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid gainsboro;
+}
+
+.title {
+  font-size: 2rem;
+  white-space: pre-wrap;
+  color: cornflowerblue;
+  /* margin-bottom: 10px; */
+}
+
+.body {
+  white-space: pre-wrap;
+}
