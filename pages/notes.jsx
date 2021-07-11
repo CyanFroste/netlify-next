@@ -1,13 +1,30 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { uuid } from "../util/uuid";
 import styles from "../styles/Notes.module.css";
 import Note from "../components/Note";
+import AuthContext from "../stores/AuthContext";
 
 export default function Notes() {
   const [noteTitle, setNoteTitle] = useState("");
   const [noteBody, setNoteBody] = useState("");
   const [notes, setNotes] = useState([]);
+
+  const { user, authReady } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (authReady)
+      fetch(
+        "/.netlify/functions/examples",
+        user && {
+          headers: {
+            Authorization: "Bearer " + user.token.access_token,
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => data.length && setNotes([...data]));
+  }, [user]);
 
   function addNote() {
     if (!noteTitle && !noteBody) return;
